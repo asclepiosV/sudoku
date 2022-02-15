@@ -2,13 +2,15 @@
 void board();
 
 int main() {
-    board();
+    int a = 0;
+    int b = 0;
+    printf("Add number: \n");
+    scanf("%d%d", &a, &b);
+    board(a,b);
     return 0;
 }
 
-void board(){
-    int a = 1;
-    int b = 2;
+void board(a,b){
     printf("  ");
     printf("%d", a);
     printf("  |  ");
