@@ -65,34 +65,6 @@ void createSquare(table, a, b){
 
 }
 
-void board(a,b, table){
+void board(a,b, table) {
     createSquare(table, a, b);
-
-   /* switch (table) {
-        case 1:
-            var = a;
-            createSquare(var);
-            break;
-        case 2:
-            var = a;
-            createSquare(var);
-            var = b;
-            createSquare(var);
-            break;
-        default:
-            printf("case ne marche pas");
-    }*/
-
-
-   /* printf("  ");
-    printf("%d", a);
-    printf("  |  ");
-    printf("%d",b);
-    printf("  \n");
-    printf("-----|-----\n");
-    printf("  ");
-    printf("%d", b);
-    printf("  |  ");
-    printf("%d",a);
-    printf("  \n");*/
 }
