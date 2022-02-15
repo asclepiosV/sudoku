@@ -5,7 +5,6 @@ int main() {
     int a = 0;
     int b = 0;
     int table;
-    int test;
     char choice;
     printf("Choose the table size\n");
     scanf("%i",&table);
@@ -39,8 +38,6 @@ int main() {
         default:
             printf("STP choisis entre a et b la prochaine fois");
     }
-
-
     board(a,b, table);
     return 0;
 }
@@ -62,7 +59,6 @@ void createSquare(table, a, b){
         printf("\n");
         x += 1;
     }
-
 }
 
 void board(a,b, table) {
