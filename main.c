@@ -44,14 +44,18 @@ int main() {
     board(a,b, table);
     return 0;
 }
-void createSquare(table, var){
+void createSquare(table, a, b){
     int i = 0;
     int x = 0;
+    int var;
     while (table > x) {
         while (table > i) {
-            printf("__");
-            /*printf("%d", var);*/
-            printf(" |");
+            if(x == i ){
+                var = a;
+            }
+            else var = b;
+            printf("%d", var);
+            printf(" | ");
             i += 1;
         }
         i = 0;
@@ -62,8 +66,7 @@ void createSquare(table, var){
 }
 
 void board(a,b, table){
-    int var;
-    createSquare(table, a, b, var);
+    createSquare(table, a, b);
 
    /* switch (table) {
         case 1:
