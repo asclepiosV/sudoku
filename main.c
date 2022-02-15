@@ -5,12 +5,12 @@ int main() {
     int a = 0;
     int b = 0;
     int table;
+    int test;
     char choice;
     printf("Choose the table size\n");
-    scanf("%u",&table);
+    scanf("%i",&table);
     printf("Choose a or b\n");
     scanf("%s", &choice);
-    printf("%u", table);
     switch (choice) {
         case 'a':
             printf("Add a number: \n");
@@ -44,21 +44,33 @@ int main() {
     board(a,b, table);
     return 0;
 }
-void createSquare(var){
-    printf("__\n");
-    printf("%d", var);
-    printf(" |\n");
+void createSquare(table, var){
+    int i = 0;
+    int x = 0;
+    while (table > x) {
+        while (table > i) {
+            printf("__");
+            /*printf("%d", var);*/
+            printf(" |");
+            i += 1;
+        }
+        i = 0;
+        printf("\n");
+        x += 1;
+    }
+
 }
+
 void board(a,b, table){
-    printf("%d", table);
     int var;
-    switch (table) {
-        case 0:
+    createSquare(table, a, b, var);
+
+   /* switch (table) {
+        case 1:
             var = a;
             createSquare(var);
             break;
         case 2:
-            printf("case marche");
             var = a;
             createSquare(var);
             var = b;
@@ -66,7 +78,7 @@ void board(a,b, table){
             break;
         default:
             printf("case ne marche pas");
-    }
+    }*/
 
 
    /* printf("  ");
