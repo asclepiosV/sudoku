@@ -4,9 +4,13 @@ void board();
 int main() {
     int a = 0;
     int b = 0;
+    int table;
     char choice;
+    printf("Choose the table size\n");
+    scanf("%u",&table);
     printf("Choose a or b\n");
     scanf("%s", &choice);
+    printf("%u", table);
     switch (choice) {
         case 'a':
             printf("Add a number: \n");
@@ -33,16 +37,39 @@ int main() {
             }
             break;
         default:
-            printf("STP choisi entre a et b la prochaine fois");
+            printf("STP choisis entre a et b la prochaine fois");
     }
 
 
-    board(a,b);
+    board(a,b, table);
     return 0;
 }
+void createSquare(var){
+    printf("__\n");
+    printf("%d", var);
+    printf(" |\n");
+}
+void board(a,b, table){
+    printf("%d", table);
+    int var;
+    switch (table) {
+        case 0:
+            var = a;
+            createSquare(var);
+            break;
+        case 2:
+            printf("case marche");
+            var = a;
+            createSquare(var);
+            var = b;
+            createSquare(var);
+            break;
+        default:
+            printf("case ne marche pas");
+    }
 
-void board(a,b){
-    printf("  ");
+
+   /* printf("  ");
     printf("%d", a);
     printf("  |  ");
     printf("%d",b);
@@ -52,5 +79,5 @@ void board(a,b){
     printf("%d", b);
     printf("  |  ");
     printf("%d",a);
-    printf("  \n");
+    printf("  \n");*/
 }
