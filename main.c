@@ -1,44 +1,58 @@
 #include <stdio.h>
+#include <string.h>
+
 void board();
 
 int main() {
     int a = 0;
     int b = 0;
-    int table;
-    char choice;
-    printf("Choose the table size\n");
-    scanf("%i",&table);
-    printf("Choose a or b\n");
-    scanf("%s", &choice);
-    switch (choice) {
-        case 'a':
+    int table = 4;
+    char row;
+    int column;
+    int position[16] = {};
+    printf("Choose A => D\n");
+    scanf("%s", &row);
+    printf("1=>4\n");
+    scanf("%d", &column);
+    switch (row & column) {
+        case 'A' & 1:
             printf("Add a number: \n");
-            scanf("%d", &a);
-            switch (a) {
-                case 1:
-                    b = 2;
-                    break;
-                case 2:
-                    b = 1;
-                    break;
-            }
+            scanf("%d", &position[0]);
             break;
-        case 'b':
+        case 'A' & 2:
             printf("Add a number: \n");
-            scanf("%d", &b);
-            switch (b) {
-                case 1:
-                    a = 2;
-                    break;
-                case 2:
-                    a = 1;
-                    break;
-            }
+            scanf("%d", &position[1]);
+            break;
+        case 'A' & 3:
+            printf("Add a number: \n");
+            scanf("%d", &position[2]);
+            break;
+        case 'A' & 4:
+            printf("Add a number: \n");
+            scanf("%d", &position[3]);
+            break;
+        case 'B' & 1:
+            printf("Add a number: \n");
+            scanf("%d", &position[4]);
+            break;
+        case 'B' & 2:
+            printf("Add a number: \n");
+            scanf("%d", &position[5]);
+            break;
+        case 'B' & 3:
+            printf("Add a number: \n");
+            scanf("%d", &position[6]);
+            break;
+        case 'B' & 4:
+            printf("Add a number: \n");
+            scanf("%d", &position[7]);
             break;
         default:
-            printf("STP choisis entre a et b la prochaine fois");
+            printf("STP choisis entre a et b la prochaine fois\n");
     }
-    board(a,b, table);
+    for (int i = 0; i < 16; i++) {
+        printf("%d ", position[i]);
+    }
     return 0;
 }
 void createSquare(table, a, b){
